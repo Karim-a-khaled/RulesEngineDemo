@@ -1,0 +1,89 @@
+{
+  "WorkflowName": "FatherhoodLeaveRule",
+  "Rules": [
+    {
+      "RuleName": "IsFatherhoodLeaveEligible_5Years",
+      "SuccessEvent": "Fatherhood Leave Approved for 1 Month",
+      "ErrorMessage": "Fatherhood Leave Not Approved",
+      "Conditions": {
+        "All": [
+          {
+            "Name": "IsMarried",
+            "Expression": "employee.IsMarried == true"
+          },
+          {
+            "Name": "HasNewBorn",
+            "Expression": "employee.HasNewBorn == true"
+          },
+          {
+            "Name": "YearsOfService",
+            "Expression": "employee.YearsOfService > 5"
+          }
+        ]
+      }
+    },
+    {
+      "RuleName": "IsFatherhoodLeaveEligible_3Years",
+      "SuccessEvent": "Fatherhood Leave Approved for 3 Weeks",
+      "ErrorMessage": "Fatherhood Leave Not Approved",
+      "Conditions": {
+        "All": [
+          {
+            "Name": "IsMarried",
+            "Expression": "employee.IsMarried == true"
+          },
+          {
+            "Name": "HasNewBorn",
+            "Expression": "employee.HasNewBorn == true"
+          },
+          {
+            "Name": "YearsOfService",
+            "Expression": "employee.YearsOfService > 3 && employee.YearsOfService <= 5"
+          }
+        ]
+      }
+    },
+    {
+      "RuleName": "IsFatherhoodLeaveEligible_2Years",
+      "SuccessEvent": "Fatherhood Leave Approved for 10 Days",
+      "ErrorMessage": "Fatherhood Leave Not Approved",
+      "Conditions": {
+        "All": [
+          {
+            "Name": "IsMarried",
+            "Expression": "employee.IsMarried == true"
+          },
+          {
+            "Name": "HasNewBorn",
+            "Expression": "employee.HasNewBorn == true"
+          },
+          {
+            "Name": "YearsOfService",
+            "Expression": "employee.YearsOfService > 1 && employee.YearsOfService <= 2"
+          }
+        ]
+      }
+    },
+    {
+      "RuleName": "IsFatherhoodLeaveEligible_1Year",
+      "SuccessEvent": "Fatherhood Leave Approved for 1 Week",
+      "ErrorMessage": "Fatherhood Leave Not Approved",
+      "Conditions": {
+        "All": [
+          {
+            "Name": "IsMarried",
+            "Expression": "employee.IsMarried == true"
+          },
+          {
+            "Name": "HasNewBorn",
+            "Expression": "employee.HasNewBorn == true"
+          },
+          {
+            "Name": "YearsOfService",
+            "Expression": "employee.YearsOfService <= 1"
+          }
+        ]
+      }
+    }
+  ]
+}
