@@ -10,8 +10,8 @@ var app = builder.Build();
 
 app.MapPost("/approve-leave", async (ILeaveRequestService leaveRequestService, Employee employee) =>
 {
-    var result = await leaveRequestService.ApproveLeaveRequestAsync(employee);
-    return result ? Results.Ok("Leave Approved") : Results.BadRequest("Leave Not Approved");
+    string result = await leaveRequestService.ApproveLeaveRequestAsync(employee);
+    return result.Contains("Leave Approved") ? Results.Ok(result) : Results.BadRequest(result);
 });
 
 app.Run();
