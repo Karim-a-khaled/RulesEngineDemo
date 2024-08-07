@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\RulesEngineDemo.Application\RulesEngineDemo.Application.csproj" />
+    <ProjectReference Include="..\RulesEngineDemo.Domain\RulesEngineDemo.Domain.csproj" />
   </ItemGroup>
 
   <PropertyGroup>

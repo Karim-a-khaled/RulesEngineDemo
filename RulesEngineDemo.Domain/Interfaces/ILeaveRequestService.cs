@@ -4,5 +4,5 @@ namespace RulesEngineDemo.Domain.Interfaces;
 
 public interface ILeaveRequestService
 {
-    Task<bool> ApproveLeaveRequestAsync(Employee employee);
+    Task<string> ApproveLeaveRequestAsync(Employee employee);
 }

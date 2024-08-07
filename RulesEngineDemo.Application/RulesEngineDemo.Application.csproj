@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RulesEngineDemo.Domain\RulesEngineDemo.Domain.csproj" />
+    <ProjectReference Include="..\RulesEngineDemo.Infrastructure\RulesEngineDemo.Infrastructure.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
