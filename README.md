@@ -30,6 +30,7 @@ The repository is organized into the following main folders:
     cd RulesEngineDemo.Api
     dotnet run
 ### Domain Layer
+#### Contains the core business entities, behaviors, and logic. This layer is independent of any external frameworks or libraries.
 
 1. ### Entities
 
@@ -77,6 +78,7 @@ The repository is organized into the following main folders:
     ```
 
 ### Application Layer
+#### Defines the use cases and orchestrates the interaction between the domain and other layers.
 
 1. **LeaveRequestService.**
     * #### Class Definition and Dependencies
@@ -198,6 +200,7 @@ The repository is organized into the following main folders:
 
 
 ### Infrastructure Layer
+#### Includes the implementation of external dependencies, such as databases, web services, and message queues.
 
 1. ### Creating DB Context
     ```csharp
@@ -216,7 +219,7 @@ The repository is organized into the following main folders:
     ```
 
 ### Presentation Layer
- 
+#### Handles the user interface and user interactions.
 
 # Elsa Workflows vs Microsoft Rules Engine
 
