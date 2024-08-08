@@ -23,18 +23,20 @@ The repository is organized into the following main folders:
    cd RulesEngineDemo
 
 2. Restore dependencies and build the solution:
-dotnet restore
-dotnet build
+    ```sh
+    dotnet restore
+    dotnet build
 
 ### Running The Application
-cd RulesEngineDemo.Api
-dotnet run
+    ```sh
+    cd RulesEngineDemo.Api
+    dotnet run
 
 ### Domain Layer
 
-#### Entities
+### Entities
 
-### Employee
+#### Employee
 
 **Represents an employee within the system.**
 
@@ -50,8 +52,7 @@ public class Employee
 
 ### LeaveRequest Entity
 
-```markdown
-### LeaveRequest
+#### LeaveRequest
 
 **Represents a leave request submitted by an employee.**
 
@@ -67,8 +68,7 @@ public class LeaveRequest
 
 ### ILeaveRequestService Interface
 
-```markdown
-### ILeaveRequestService
+#### ILeaveRequestService
 
 **Defines the contract for a service that handles leave request approval.**
 
