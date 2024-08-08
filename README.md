@@ -219,6 +219,11 @@ The repository is organized into the following main folders:
 #### Handles the user interface and user interactions.
 
 ```csharp
+app.MapPost("/approve-leave", async (ILeaveRequestService leaveRequestService, [FromBody]Employee employee) =>
+{
+    string result = await leaveRequestService.ApproveLeaveRequestAsync(employee);
+    return result.Contains("Leave Approved") ? Results.Ok(result) : Results.BadRequest(result);
+});
 ```
 
 ### Approve Leave Request Endpoint
@@ -259,10 +264,9 @@ This endpoint allows an employee to request approval for leave. The request is p
   "Leave Not Approved"
   ```
 
+## You will find the same ex implemented using elsa wrokflows in [ElsaDemo](https://github.com/Karim-a-khaled/ElsaDemo)
 
-### You will find the same ex implemented using elsa wrokflows in [ElsaDemo](https://github.com/Karim-a-khaled/ElsaDemo)
-
-### Comparison between Elsa Vs Rules Engine
+## Comparison between Elsa Vs Rules Engine
 
 ### Elsa Workflow
 #### Purpose: Orchestrate and automate complex business processes.
