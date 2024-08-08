@@ -1,0 +1,29 @@
+{
+  "WorkflowName": "FatherhoodLeaveRule",
+  "Rules": [
+    {
+      "RuleName": "IsFatherhoodLeaveEligible_5Years",
+      "Expression": "employee.IsMarried && employee.HasNewBorn && employee.YearsOfService >= 5",
+      "SuccessEvent": "Fatherhood Leave Approved for 1 Month",
+      "FailureEvent": "Fatherhood Leave Not Approved"
+    },
+    {
+      "RuleName": "IsFatherhoodLeaveEligible_3Years",
+      "Expression": "employee.IsMarried && employee.HasNewBorn && employee.YearsOfService >= 3 && employee.YearsOfService < 5",
+      "SuccessEvent": "Fatherhood Leave Approved for 3 Weeks",
+      "FailureEvent": "Fatherhood Leave Not Approved"
+    },
+    {
+      "RuleName": "IsFatherhoodLeaveEligible_2Years",
+      "Expression": "employee.IsMarried && employee.HasNewBorn && employee.YearsOfService > 1 && employee.YearsOfService <= 2",
+      "SuccessEvent": "Fatherhood Leave Approved for 10 Days",
+      "FailureEvent": "Fatherhood Leave Not Approved"
+    },
+    {
+      "RuleName": "IsFatherhoodLeaveEligible_1Year",
+      "Expression": "employee.IsMarried && employee.HasNewBorn && employee.YearsOfService <= 1",
+      "SuccessEvent": "Fatherhood Leave Approved for 1 Week",
+      "FailureEvent": "Fatherhood Leave Not Approved"
+    }
+  ]
+}
