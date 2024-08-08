@@ -21,17 +21,17 @@ The repository is organized into the following main folders:
    ```sh
    git clone https://github.com/Karim-a-khaled/RulesEngineDemo.git
    cd RulesEngineDemo
-   ```sh
+   ```
 2. Restore dependencies and build the solution:
     ```sh
     dotnet restore
     dotnet build
-    ```sh
+    ```
 ### Running The Application
     ```sh
     cd RulesEngineDemo.Api
     dotnet run
-    ```sh
+    ```
 ### Domain Layer
 
 ### Entities
@@ -65,7 +65,7 @@ public class LeaveRequest
     public DateTime EndDate { get; set; }
     public bool IsApproved { get; set; }
 }
-```csharp
+```
 
 ### ILeaveRequestService Interface
 
@@ -78,7 +78,7 @@ public interface ILeaveRequestService
 {
     Task<string> ApproveLeaveRequestAsync(Employee employee);
 }
-```csharp
+```
 
 # Elsa Workflows vs Microsoft Rules Engine
 
