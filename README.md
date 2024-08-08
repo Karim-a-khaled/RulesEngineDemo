@@ -30,7 +30,6 @@ The repository is organized into the following main folders:
     cd RulesEngineDemo.Api
     dotnet run
 ### Domain Layer
-#### Contains the core business entities, behaviors, and logic. This layer is independent of any external frameworks or libraries.
 
 1. ### Entities
 
@@ -78,7 +77,6 @@ The repository is organized into the following main folders:
     ```
 
 ### Application Layer
-#### Defines the use cases and orchestrates the interaction between the domain and other layers.
 
 1. **LeaveRequestService.**
     * #### Class Definition and Dependencies
@@ -200,7 +198,6 @@ The repository is organized into the following main folders:
 
 
 ### Infrastructure Layer
-#### Includes the implementation of external dependencies, such as databases, web services, and message queues.
 
 1. ### Creating DB Context
     ```csharp
@@ -221,9 +218,53 @@ The repository is organized into the following main folders:
 ### Presentation Layer
 #### Handles the user interface and user interactions.
 
-# Elsa Workflows vs Microsoft Rules Engine
+```csharp
+```
 
-## Elsa Workflow
+### Approve Leave Request Endpoint
+
+#### Endpoint
+**`POST /approve-leave`**
+
+#### Description
+This endpoint allows an employee to request approval for leave. The request is processed by the `ILeaveRequestService` to determine if the leave can be approved.
+
+#### Request
+- **Body:** The request expects a JSON object representing an `Employee`.
+
+#### Example Request Body:
+```json
+{
+  "Id": "1",
+  "name": "Employee Name",
+  "IsMarried": true,
+  "HasNewBorn": true,
+  "YearsOfService": 5
+}
+```
+
+#### Response
+
+- **200 OK:** The request was successful, and the leave request was approved.
+- **400 Bad Request:** The request was unsuccessful, and the leave request was not approved.
+
+#### Example Response
+
+- **Success:**
+  ```json
+  "Leave Approved for {duration} days"
+  ```
+- **Failure:**
+  ```json
+  "Leave Not Approved"
+  ```
+
+
+### You will find the same ex implemented using elsa wrokflows in [ElsaDemo](https://github.com/Karim-a-khaled/ElsaDemo)
+
+### Comparison between Elsa Vs Rules Engine
+
+### Elsa Workflow
 #### Purpose: Orchestrate and automate complex business processes.
 
 #### Key Feature
